@@ -8,8 +8,8 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`id`, `cid`, `reference_link`) VALUES
 (1, 1, 'https://www.geeksforgeeks.org/python-programming-language/learn-python-tutorial/'),
 (2, 1, 'https://www.tutorialspoint.com/python/index.htm'),
-(3, 1, 'https://www.geeksforgeeks.org/php-examples/'),
-(4, 1, 'https://www.tutorialspoint.com/php/index.htm');
+(3, 2, 'https://www.geeksforgeeks.org/php-examples/'),
+(4, 2, 'https://www.tutorialspoint.com/php/index.htm');
 
 
 CREATE TABLE `courses` (
