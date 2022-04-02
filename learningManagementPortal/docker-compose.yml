@@ -3,30 +3,30 @@ services:
   nodejs:
     build: 
       context: .
-    image: sudhakar1/node-web-app
+    image: lmpsureify/node-web-app
     networks:
       - frontend
       - backend
     environment:
-      - MYSQL_HOST=sudha-mysql-app
-      - MYSQL_USER=sudhauser
-      - MYSQL_PASS=sudhapass
-      - MYSQL_DB=sudha_db
+      - MYSQL_HOST=lmp-mysql-app
+      - MYSQL_USER=lmpuser
+      - MYSQL_PASS=lmppass
+      - MYSQL_DB=lmp_db
     volumes:
       - ./www/:/var/www/html/
     ports:
       - "30001:8005"
-    container_name: sudha-nodejs-app
+    container_name: lmp-nodejs-app
   mysql:
     image: mysql:5.7
     networks:
       - backend
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=sudhauser
-      - MYSQL_PASSWORD=sudhapass 
-      - MYSQL_DATABASE=sudha_db
-    container_name: sudha-mysql-app
+      - MYSQL_USER=lmpuser
+      - MYSQL_PASSWORD=lmppass 
+      - MYSQL_DATABASE=lmp_db
+    container_name: lmp-mysql-app
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
     depends_on:
@@ -36,11 +36,11 @@ services:
     ports:
       - "30002:80"
     environment:
-      - PMA_HOST=sudha-mysql-app
+      - PMA_HOST=lmp-mysql-app
       - PMA_PORT= 3306
     volumes:
       - /sessions
-    container_name: sudha-phpmyadmin-app
+    container_name: lmp-phpmyadmin-app
 networks:
   frontend:
   backend:
