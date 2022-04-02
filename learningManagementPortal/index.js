@@ -44,9 +44,9 @@ app.get('/courses',function(req,res){
  });
 
 
- app.get('/course',function(req,res){
-    var queryStr = 'SELECT * FROM course where cid = 1';
-    
+app.get('/course/:id',function(req,res){
+    var queryStr = 'SELECT * FROM course where cid ='+ req.params.id;
+    console.log(queryStr);
     var connection = mysql.createConnection(connectionOptions);
     connection.connect();
     connection.query(queryStr, function (error, results, fields) {
