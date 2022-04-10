@@ -111,7 +111,10 @@ function Card({cardTitle, courseId}) {
                                     Beginner
                                 </p>
                             </CardCategory>
-                            <Link to={`/course/${courseId}`}>
+                            <Link to={{
+                                pathname : `/course/${courseId}`,
+                                test : 'sudha'
+                            }}>
                                 <PreviewBtn>
                                     Preview
                                     <RArrow />
